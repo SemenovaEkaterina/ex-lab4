@@ -12,9 +12,11 @@ def field(items, *args):
 		else:
 			new_items = {};
 			for x in args:
-				if not n[x] is None:
-					new_items[x] = n[x];
-			yield new_items;
+				if not n.get(x) is None:
+					new_items[x] = n[x]
+
+			if len(new_items) > 0:
+				yield new_items;
 
 
 

@@ -1,10 +1,9 @@
 
 def print_result(func):
-	def wrapper(*args):
-		if len(args) == 0:
-			result = func()
-		else:
-			result = func(*args)
+	def wrapper(*args, **kwargs):
+		
+		result = func(*args, **kwargs)
+
 		print(func.__name__)
 		if type(result) == dict:
 			for i in result.keys():

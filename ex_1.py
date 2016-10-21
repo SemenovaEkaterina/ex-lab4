@@ -11,16 +11,16 @@ goods = [
 
 
 for x in field(goods, 'title'):
-	print(x, end = " ")
+	print(x)
 
 
-for x in field(goods, 'title', 'price'):
-	print(x, end = " ")
+for x in field(goods, 'title1', 'price1'):
+	print(x)
 
 for x in field(goods, 'title', 'price', 'color'):
-	print(x, end = " ")
+	print(x)
 
 
 
 for x in gen_random(3, 5, 20):
-	print(x, end = " ")
+	print(x)

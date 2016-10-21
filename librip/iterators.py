@@ -2,14 +2,16 @@
 class Unique(object):
 	def __init__(self, items, **kwargs):
         
-		if len(kwargs) != 0:
-			self.ignore_case = kwargs['ignore_case']
-		else:
-			self.ignore_case = kwargs['ignore_case'] = False
 
-		self.items = items
 
-		self.unique_items = []
+		
+		self.ignore_case = kwargs.get('ignore_case', False)
+
+
+		
+		self.items = iter(items)
+
+		self.unique_items = set()
 
 
 		self.index = 0
@@ -17,8 +19,6 @@ class Unique(object):
 
 	def __next__(self):
 
-		if type(self.items) == list:
-			self.items = iter(self.items)
 
 		for x in self.items:
 			if not x is None:
@@ -26,7 +26,7 @@ class Unique(object):
 				if self.ignore_case == True:
 					x = str(x).lower()
 				if not x in self.unique_items:
-					self.unique_items.append(x)
+					self.unique_items.add(x)
 					return origin
 		
 		raise StopIteration

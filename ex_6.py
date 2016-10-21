@@ -15,7 +15,7 @@ with open(path) as f:
 
 @print_result
 def f1(arg):
-    return sorted([y for y in unique(field(data, "job-name"), ignore_case = True)], key = lambda x: x.lower())
+    return sorted(unique(field(data, "job-name"), ignore_case = True), key = lambda x: x.lower())
 
 
 @print_result
